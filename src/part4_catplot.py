@@ -43,7 +43,7 @@ def cat_nonfelony(df1,df2):
 def cat_hue(df1,df2):    
     merged_df = pd.concat([df1,df2],axis=1)
     sns.catplot(data = merged_df,x="offense_category",y="prediction_felony",kind='bar',hue ="y_felony")
-    plt.savefig('./data/part4_plots/cat_felony.png', bbox_inches='tight')
+    plt.savefig('./data/part4_plots/cat_hue.png', bbox_inches='tight')
     print("what does it mean that prediction for arrestees with a current felony charge, but who did not get rearrested for a felony crime have a higher predicted probability than arrestees with a current misdemeanor charge, but who did get rearrested for a felony crime? ")
     print("It means that if you got arrested once for a felony charge you are predicted have a higher chance to commit a future felony than some who commited a felony then a misdemeanor")
 # In a print statement, answer the following question: 
