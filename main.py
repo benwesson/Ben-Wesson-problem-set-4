@@ -9,7 +9,7 @@ import pandas as pd
 import src.part1_etl as part1
 import src.part2_plot_examples as part2
 import src.part3_bar_hist as part3
-#import src.part4_catplot as part4
+import src.part4_catplot as part4
 import src.part5_scatter as part5
 
 def main():
@@ -20,7 +20,7 @@ def main():
     
     pred_universe, arrest_events, charge_counts, charge_counts_by_offense = part1.extract_transform()
     #print(pred_universe)
-    
+    #print(charge_counts_by_offense)
     ##  PART 2: PLOT EXAMPLES  ##
     # Apply plot theme
     part2.seaborn_settings()
@@ -44,11 +44,12 @@ def main():
 
     ##  PART 4: CATEGORICAL PLOTS  ##
     # 1
-    
+    part4.cat_felony(pred_universe,charge_counts_by_offense)
     # 2
-
+    part4.cat_nonfelony(pred_universe,charge_counts_by_offense)
+    
     # 3
-
+    part4.cat_hue(pred_universe,charge_counts_by_offense)
     ##  PART 5: SCATTERPLOTS  ##
     # 1
     #print(pred_universe.columns)
